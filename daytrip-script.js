@@ -20,12 +20,33 @@ let locations = ["Wisconsin Dells", "Milwaukee", "Eagle", "Baraboo"];
     let barabooTransport = ["Lamers Bus Lines", "Greyhound Bus", "Kobussen Buses, Ltd."]
     let barabooFun = ["International Crane Foundation", "Circus World Museum", "Devil's Lake State Park"]
 
-//Function for picking a location randomly from locations array:    
+//Function for picking a location randomly from locations array:
+//Question: will return i = Math.floor(Math.random() * randomLocation.length) do the same thing in fewer lines?    
 function pickTrip(randomLocation) {
 let i = Math.floor(Math.random() * randomLocation.length);
 return (randomLocation[i]);
 }
 
-let chosenLocale = pickTrip(locations); {
+let chosenLocale = pickTrip(locations);
     console.log("You're going on a day trip to ", chosenLocale);
+
+//In progress: functions to pick food, transportation, and entertainment:
+
+if(chosenLocale === "Wisconsin Dells") {
+    //then pick one random string from each array (dellsFood, dellsTransport, dellsFun)
+    //do the same for each location, switching out the location and array names
+}
+
+function pickFood(foodArray) {
+    if(chosenLocale === "Wisconsin Dells") {
+        return i = Math.floor(Math.random() * dellsFood)
+    }
+}
+
+function pickTransport(transportArray) {
+
+}
+
+function pickFun(funArray) {
+
 }
