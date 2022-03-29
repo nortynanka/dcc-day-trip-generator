@@ -1,0 +1,11 @@
+let selectedEntertainment = pickThing(fun); {
+
+let userConfirmation = confirmTripChoice(selectedEntertainment);
+
+continueChoosing(fun);
+
+while(userConfirmation == "N") {
+    selectedEntertainment = pickThing(fun);
+    console.log("You will go to " + selectedEntertainment);
+    userInput = confirmTripChoice(selectedEntertainment);
+    }
