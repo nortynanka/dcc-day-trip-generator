@@ -1,57 +1,70 @@
 "use strict"
 
-//OPTIONS
 
-let location = ["Wisconsin Dells", "Milwaukee", "Eagle", "Baraboo"];
-let food = ["Moose Jaw Pizza", "Monk's Bar & Grill", "High Rock Cafe"];
-let transport = ["Dells City Taxi", "Original Wisconsin Ducks", "Dells Boat Tours"];
-let fun = ["Noah's Ark Waterpark", "Tommy Bartlett Exploratory", "Wizard Quest"];
+run();
 
-//LOCATION
 
-let selectedDestination = pickThing(location);
+function run(){
 
-userConfirmation = confirmTripChoice(selectedDestination);
+// OPTIONS
 
-pickSomethingElse();
+    let locations = ["Wisconsin Dells", "Milwaukee", "Eagle", "Baraboo"];
+    let restaurants = ["Moose Jaw Pizza", "Monk's Bar & Grill", "High Rock Cafe"];
+    let transport = ["Dells City Taxi", "Original Wisconsin Ducks", "Dells Boat Tours"];
+    let funActivities = ["Noah's Ark Waterpark", "Tommy Bartlett Exploratory", "Wizard Quest"];
 
-//RESTAURANT
+// LOCATIONS
 
-let selectedRestaurant = pickThing(food); 
+    let selectedDestination = chooseUntilSatisfied(locations)
 
-userConfirmation = confirmTripChoice(selectedRestaurant); 
+// RESTAURANTS
 
-pickSomethingElse();
+    let selectedRestaurant = chooseUntilSatisfied(restaurants)
 
-//TRANSPORTATION
-    
-let selectedTransportation = pickThing(transport); 
+// TRANSPORTATION
+        
+    let selectedTransportation = chooseUntilSatisfied(transport)
 
-userConfirmation = confirmTripChoice(selectedTransportation);
+// ENTERTAINMENT
 
-pickSomethingElse();
+    let selectedEntertainment = chooseUntilSatisfied(funActivities)
 
-//ENTERTAINMENT
+    console.log(`Great job! You will be going to ${selectedDestination} then eating at ${selectedRestaurant}. Your mode of transportation will be ${selectedTransportation} and you will finish the day at ${selectedEntertainment}`);
 
-let selectedEntertainment = pickThing(fun); 
+    let userConfirmedCompleteTrip = prompt("Are you happy with the day trip? Y/N");
 
-userConfirmation = confirmTripChoice(selectedEntertainment);
+    if(userConfirmedCompleteTrip == "N"){
+        run();
+    }else{
+        alert("Enjoy your trip!");
+    }
+}
 
-pickSomethingElse();
+// FUNCTIONS
 
-//FUNCTIONS
+function chooseUntilSatisfied(arrayOfOptions){
+
+    let selectedOption = pickThing(arrayOfOptions);
+
+    let userConfirmation = confirmTripChoice(selectedOption);
+
+    while(userConfirmation != "Y"){
+        selectedOption = pickThing(arrayOfOptions);
+        userConfirmation = confirmTripChoice(selectedOption);
+    }
+
+    return selectedOption;
+
+}
 
 function pickThing(someArray) {
-    let i = Math.floor(Math.random() * someArray.length);
-    return (someArray[i]);
+
+    let randomNumber = Math.floor(Math.random() * someArray.length);
+
+    return someArray[randomNumber];
 }
 
 function confirmTripChoice(option) {
     let userConfirmation = prompt(`The generator chose ${option}. Are you satisfied with this choice? Y/N`);
     return userConfirmation;
-}
-
-function chooseAgain(categoryName) {
-    while(userConfirmation == "N");
-        pickThing(option);
 }
