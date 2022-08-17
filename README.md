@@ -1,5 +1,5 @@
 # Day Trip Generator
-## A devCodeCamp Project
+#### A devCodeCamp Project
 
 ### Description:
 *The Day Trip Generator project was my first project assigned to me at devCodeCamp.*
