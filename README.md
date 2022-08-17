@@ -1,19 +1,19 @@
 # Day Trip Generator
-#### A devCodeCamp Project
+## A devCodeCamp Project
 
-##### Description:
+### Description:
 *The Day Trip Generator project was my first project assigned to me at devCodeCamp.*
 
 - It generates a randomized day trip itinerary with featured options in Wisconsin.
 - The goal for this app is to efficiently create varying itineraries until the user is satisfied with one.
 
-##### Learning objective:
+### Learning objective:
 - Use and practice JavaScript fundamentals, with an emphasis on Single Responsibility.
 
-##### Technologies:
+### Technologies:
 - JavaScript
 
-##### Features:
+### Features:
 
 - A destination can be randomly selected
 - A restaurant can be randomly selected
